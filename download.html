@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Récupérez votre Diplôme !</title>
+    <link rel="stylesheet" href="assets/css/download.css">
+</head>
+<body>
+    <h1>Téléchargez votre diplôme</h1>
+    <div class="wrapper">
+        <div class="diplome">
+            <h1>Diplôme de l'Institut Supérieur de Technologie de Mamou</h1>
+            <p>Nous déclarons que</p>
+            <h3>Mamadou Moustapha Diallo</h3>
+            <p>sous le matricule #2104111113</p>
+            <div class="ligne"></div>
+            <p>a satisfait aux exigences de la licence en Génie Informatique.</p>
+            <div class="footer">
+                <div>
+                    <div class="ligne"></div>
+                    <p class="fullname">Ibrahima Touré</p>
+                    <p>Chef du Département</p>
+                </div>
+                <div class="badge">
+                    <img src="assets/images/badge.png" alt="">
+                </div>
+                <div>
+                    <div class="ligne"></div>
+                    <p class="fullname">Dr Hamidou Barry</p>
+                    <p>Directeur Général</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="button-wrapper">
+
+        <button>
+            <img width="20" src="assets/images/download.png" alt="Click to download"> <br>
+            Imprimer
+        </button>
+    </div>
+    <script src="assets/js/html2pdf.bundle.min.js"></script>
+    <script>
+        const button = document.querySelector("button");
+        button.addEventListener("click", () => {
+            const diplome = document.querySelector(".diplome");
+            var opt = {
+            margin:       1,
+            filename:     'myfile.pdf',
+            image:        { type: 'png', quality: 0.98 },
+            html2canvas:  { scale: 2 },
+            jsPDF:        { unit: 'in', format: 'letter', orientation: 'landscape' }
+            };
+            
+            // Enregistrer en PDF
+            html2pdf(diplome, opt);
+        })
+    </script>
+</body>
+</html>

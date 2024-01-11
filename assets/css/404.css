@@ -1,0 +1,22 @@
+@import url(common.css);
+
+body{
+    padding: 20px;
+    text-align: center;
+    font-family: "Forum", 'Times New Roman', Times, serif;
+}
+.error-404{
+    color: #A78920;
+    font-size: 7em;
+}
+
+.goto-home{
+    margin-top: 20px;
+}
+
+.goto-home a{
+    text-decoration: none;
+    color: var(--my-color);
+    font-weight: 700;
+    font-size: large;
+}

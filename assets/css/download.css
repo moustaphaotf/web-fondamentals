@@ -1,0 +1,77 @@
+@import url(common.css);
+
+
+body{
+    text-align: center;
+
+}
+
+.wrapper {
+    padding: 5px 20px;
+    padding-right: 20px;
+    margin: 0;
+    font-family: Forum, sans-serif;
+    overflow-x: auto;
+}
+
+.diplome{
+    box-sizing: content-box;
+    width: 680px;
+    margin: auto;
+    border: 10px solid var(--my-color);
+    border-radius: 10px;
+    padding-left: 5em;
+    padding-right: 5em;
+    background-color: rgb(248 248 248);
+}
+
+.diplome h1, .diplome h3 {
+    font-family: "Germania One", 'Times New Roman', Times, serif;
+}
+
+.fullname, .diplome h1, .diplome h3 {
+    color: var(--my-color);
+}
+
+.diplome h1 {
+    font-size: 1.5em;
+}
+
+.diplome h3{
+    font-size: 2.5em;
+    margin-bottom: 0;
+}
+
+.diplome h3+p {
+    margin-bottom: 2em;
+}
+
+.footer {
+    margin-top: 2.5rem;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.ligne{
+    height: 3px;
+    background-color: black;
+}
+
+.badge img{
+    width: 50px;
+    margin-top: -10px;
+}
+
+.button-wrapper{
+    text-align: center;
+    margin-top: 2em;
+}
+button{
+    border: none;
+    padding: 5px 30px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: var(--my-color);
+    color: white;
+}
