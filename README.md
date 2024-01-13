@@ -94,6 +94,7 @@ Tout cela est possible grâce au trio formé des langages du Web: HTML, CSS et J
 flowchart LR
 HTML --- CSS
 CSS --- JavaScript
+JavaScript --- PHP/MySQL
 ```
 
 Dans cette formation, nous allons aborder beaucoup plus les deux premiers languages.
@@ -109,3 +110,9 @@ flowchart
 ```
 
 La réponse du serveur contient les codes et les ressources qui seront interprétés par le navigateur pour s'afficher à l'écran.
+
+# 3. Le projet
+
+Lors de ce cours, nous réaliserons ce projet-ci :
+
+![Web Fondamentals](./reveal.js/images/qr-code.svg)
