@@ -75,7 +75,8 @@ On va s'intéresser aux sélecteurs, il en existe plusieurs, mais on verra quelq
     va colorier tous les paragraphes du document en rouge.
 
 * Les sélecteurs de classe.
-    En HTML? on peut créer des éléments en leur ajoutant un attribut `class`.
+
+    En HTML, on peut créer des éléments en leur ajoutant un attribut `class`.
     ```html
         <body>
             <h1>Les sélécteurs</h1>
@@ -145,7 +146,7 @@ Et ainsi de suite, il y en a plein d'autres sélecteurs comme :
 
 * Sélecteur universel : 
     ```css
-    /* Pour cibler les éléments de la page, quels qu'ils soient */
+    /* Pour cibler tous les éléments de la page, quels qu'ils soient */
     * {
         margin: 0;
     }
