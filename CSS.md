@@ -248,8 +248,8 @@ Après cet apparté sur les sélecteurs, les valeurs particulières, nous allons
 |`font-weight`|Pour mettre le poids de la police (gras)|
 |`font-size`|Modifier la taille de police|
 |`text-align`|Changer l'allignement du texte|
-|`text-decoration`|Pour le |
-|`text-transform`|Changer la casse|
+|`text-decoration`|Pour la décoration du texte (soulignement)|
+|`text-transform`|Changer la casse (majuscule, minuscule)|
 |`color`|Pourla couleur de texte|
 ### Système de boites
 En HTML, tout est une boite. Mais on classe les éléments en deux: **inline** et **block**.
