@@ -272,7 +272,7 @@ On va maintenant voir comment répondre aux questions suivantes:
 
 * Les livres qui n'ont pas d'auteurs
 
-    Si vous avez ajouté des livres sans leur affecter un auteur_id(`NULL` par défaut), on dira qu'il n'ont pas d'auteurs.
+    Si vous avez ajouté des livres sans leur affecter son `auteur_id` (`NULL` par défaut), on dira qu'il n'ont pas d'auteurs.
 
     ```sql
     SELECT * FROM oeuvres
@@ -295,12 +295,14 @@ On va maintenant voir comment répondre aux questions suivantes:
     ```
 
 * L'auteur de ce livre
+
     Le livre publié en `1960` est d'`Ousmane Sembène` (`id = 2` )
 
     ```sql
     SELECT * FROM auteurs
     WHERE id = 2;
     ```
+
 * Les auteurs qui ont des bouquins dans la DB
 
     Oui ! Il y a des auteurs dont on a pas encores enregistré des oeuvres.
