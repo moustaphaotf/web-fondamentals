@@ -7,7 +7,7 @@ Il s'agit du **World Wide Web Consortium** (W3C) qui a la responsabilité de tou
 
 Le langage CSS nous permet donc de donner des styles à notre contenu HTML.
 
-Nous allons y aller petit à petit pour découvrir les styles fondamentales. Mais avant, il est important de pouvoir:
+Nous allons y aller petit à petit pour découvrir les propriétés de styles fondamentales. Mais avant, il est important de pouvoir:
 
 * Lier deux fichiers HTML et CSS.
 * Comprendre les sélecteurs.
