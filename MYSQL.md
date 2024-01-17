@@ -156,7 +156,7 @@ SHOW CREATE TABLE oeuvres;
 SHOW CREATE TABLE auteurs;
 ```
 
-Nous pouvons aussi le vérifier directement sur l'espace d'administration phpMyAdmin
+Nous pouvons aussi le vérifier directement sur l'espace d'administration phpMyAdmin.
 
 ![Check Changes](reveal.js/images/open-phpmyadmin-panel.png)
 
@@ -233,8 +233,10 @@ Nous allons donc nous amuser à twick avec la base de données qu'on a créée j
     VALUES (5, "Nini, mulâtresse du Sénégal", 1954, 3);
     ```
 
+    > Remarquez j'ai omi les guillemets autour de l'année. Oui, c'est possible si c'est un nombre on affecte à une chaine.
 
-Bref, maintenant qu'on a des informations, on va faire des request assez interessantes !
+
+Bref, maintenant qu'on a des informations, on va faire des requests assez interessantes !
 
 * Afficher les livres
     ```sql
@@ -245,12 +247,12 @@ Bref, maintenant qu'on a des informations, on va faire des request assez interes
     ```sql
     INSERT INTO oeuvres (titre, annee, auteur_id) 
     VALUES 
-    ("", "", 0),
-    ("", "", 0),
-    ("", "", 0),
-    ("", "", 0),
-    ("", "", 0),
-    ("", "", 0);
+    ("", "", NULL),
+    ("", "", NULL),
+    ("", "", NULL),
+    ("", "", NULL),
+    ("", "", NULL),
+    ("", "", NULL);
     ```
 
     > **Note:** Remplacez les valeur par les bonnes !
@@ -258,21 +260,99 @@ Bref, maintenant qu'on a des informations, on va faire des request assez interes
 On va maintenant voir comment répondre aux questions suivantes:
 
 * Les livres de Aboudlaye Sadji
-* Les livres qui n'ont pas d'auteurs
-* Les livres qui sont publiés après 1960
-* Les livres qui sont publiés en 1960
-* L'auteur de ce livre
-* Les auteurs qui ont des bouquins dans la DB
-* Les auteurs qui n'ont pas de bouquins dans la DB
-* Le plus vieux bouquin enregistré
-* L'auteur du plus vieux bouquin enregistré
+    Si on regarde dans la table auteur, `Abdoulaye Sadji` a pour `id` la valeur `3`. Alors, on peut faire:
 
+    ```sql
+    SELECT * FROM oeuvres
+    WHERE auteur_id = 3;
+    ```
+
+    > La clause `WHERE` permet de filtrer les données.
+
+* Les livres qui n'ont pas d'auteurs
+    Si vous avez ajouté des livres sans leur affecter un auteur_id(`NULL` par défaut), on dira qu'il n'ont pas d'auteurs.
+
+    ```sql
+    SELECT * FROM oeuvres
+    WHERE auteur_id IS NULL;
+    ```
+
+* Les livres qui sont publiés après 1960
+    ```sql
+    SELECT * FROM oeuvres
+    WHERE annee > 1960;
+    -- On peut aussi mettre 1960 entre guillemets.
+    ```
+* Les livres qui sont publiés en 1960
+    ```sql
+    SELECT * FROM oeuvres
+    WHERE annee = 1960;
+    ```
+* L'auteur de ce livre
+    Le livre publié en `1960` est d'`Ousmane Sembène` (`id = 2` )
+
+    ```sql
+    SELECT * FROM auteurs
+    WHERE id = 2;
+    ```
+* Les auteurs qui ont des bouquins dans la DB
+    Oui ! Il y a des auteurs dont on a pas encores enregistré des oeuvres.
+    ```sql
+    SELECT * FROM auteurs
+    WHERE id IN (
+        SELECT DISTINCT auteur_id FROM oeuvres 
+        WHERE auteur_id IS NOT NULL
+    );
+    ```
+* Les auteurs qui n'ont pas de bouquins dans la DB
+    Il s'agit du contraire de la question précédente !
+
+    ```sql
+    SELECT * FROM auteurs
+    WHERE id NOT IN (
+        SELECT DISTINCT auteur_id FROM oeuvres 
+        WHERE auteur_id IS NOT NULL
+    );
+    ```
+* Le plus vieux bouquin enregistré
+    Ce bouquin a l'année la plus petite !
+    ```sql
+    SELECT * FROM oeuvres
+    WHERE annee = (
+        SELECT MIN(annee) FROM oeuvres
+    );
+    ```
+* L'auteur du plus vieux bouquin enregistré
+    Il suffira de noter l'`auteur_id` dans la question précédente !
+
+    > Et dans la requête, on remplace `<auteur_id>` par cette valeur !
+
+    ```sql
+    SELECT * FROM auteurs
+    WHERE auteur_id = <auteur_id>;
+    ```
 
 On peut vraiment utiliser les requêtes pour récupérer des informations plus complexes
 
 * Le nombre de livres
+    ```sql
+    SELECT COUNT(id) AS nb_livres FROM oeuvres;
+    ```
+    
 * Le nombres d'auteurs
+    ```sql
+    SELECT COUNT(id) AS nb_auteurs FROM auteurs;
+    ```
 * Le nombre de bouquins dans la DB pour chaque auteur
+    Plus complexe, ici nous allons utiliser une jointure !
+
+    ```sql
+    SELECT auteurs.id, auteurs.nom, auteurs.prenom, COUNT(oeuvres.id) AS nb_oeuvre
+    FROM oeuvres
+    RIGHT JOIN auteurs
+    ON oeuvres.auteur_id = auteurs.id
+    GROUP BY auteurs.id, auteurs.nom, auteurs.prenom;
+    ```
 
 Fini les SELECT
 
