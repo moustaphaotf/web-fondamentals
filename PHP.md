@@ -255,6 +255,6 @@ catch (PDOException $e) {
 ?>
 ```
 
-> Nous utilisons la construction `try...catch` qui permet d'interception toute erreur qui se produit dans le bloc `try` et de handle cette dernière dans le bloc `catch`. Cela permet d'éviter d'avoir des warnings sur la page web lorsque l'on sera en prod !
+> Nous utilisons la construction `try...catch` qui permet d'intercepter toute erreur qui se produit dans le bloc `try` et de handle cette dernière dans le bloc `catch`. Cela permet d'éviter d'avoir des warnings sur la page web lorsque l'on sera en prod !
 
 > Nous manipulerons par la suite l'objet `$db` pour envoyer des requêtes au serveur MySQL.
