@@ -1,6 +1,11 @@
-# Apprendre les Fondamentaux du Web avec un projet guidé de A à Z
+# Les fondamentaux du Web
+## Ressources
+|Description|Lien|
+|-|-|
+|Powerpoint Web|https://github.com/moustaphaotf/web-fondamentals/blob/main/assets/Web.pdf|
+|Code Source Projet|https://github.com/moustaphaotf/ISTDiplome|
 
-# 1. Le Web ou Internet ?
+## Le Web ou Internet ?
 
 Ehhh oui ! Deux concepts distincts !
 
@@ -30,7 +35,9 @@ flowchart
 
 Explorons plus en détails chaque composante.
 
-**URL (Uniform Resource Locators) :** Permet d'accéder aux contenu sur le web. On peut dire qu'une URL représente un coordonnée d'une ressource en ligne.
+**URL (Uniform Resource Locators)**
+
+Permet d'accéder aux contenu sur le web. On peut dire qu'une URL représente un coordonnée d'une ressource en ligne.
 
 Exemples: 
 * `https://www.bing.com/search?q=le+web`
@@ -42,6 +49,8 @@ Exemples:
 **Navigateurs**
 
 Alors, les navigateurs sont le **portail vers le monde numérique**, ils permettent de traduire les code complexes en interface graphique accessible à l'utilisateur pour effectuer ses besoins.
+
+![Common browsers](reveal.js/images/browsers.png)
 
 Ces informations proviennent des serveurs accessibles grâce aux... bingo, ce sont bien les fameuses _URLs_.
 
@@ -58,6 +67,7 @@ Exemples:
 * etc.
 
 **Sites Web**
+
 Il s'agit d'une collection organisée de pages Web qui fonctionnent de façon synchrone (hiérarchique des fois).
 
 Ces pages sont ~~stockées~~ hébergées sur des serveurs pour être **accessibles 24/7** partout.
@@ -79,7 +89,8 @@ Cela vous est déjà arrivé de jongler entre plusieurs pages Web.
 
 Ce n'est rien de plus que la magie qui nous offerte par les hyperliens. Sur les pages web, ils sont facilement remarquables à cause de leurs style commun.
 
-# 2. Le dynamisme
+## Le dynamisme
+
 Le Web est un système en constante évolution. Il se nourrit à chaque instant permettant de relier le monde plus efficacement.
 
 Tout cela est possible grâce au trio formé des langages du Web: HTML, CSS et JavaScript.
@@ -99,7 +110,7 @@ JavaScript --- PHP/MySQL
 
 Dans cette formation, nous allons aborder beaucoup plus les deux premiers languages.
 
-## Communication Client / Serveur
+### Communication Client / Serveur
 
 
 ```mermaid
@@ -111,8 +122,10 @@ flowchart
 
 La réponse du serveur contient les codes et les ressources qui seront interprétés par le navigateur pour s'afficher à l'écran.
 
-# 3. Le projet
+## Le projet de cours
 
-Lors de ce cours, nous réaliserons ce projet-ci :
+Lors de ce cours, nous réaliserons ce projet-ci : https://moustaphaotf.github.io/web-fondamentals.
 
-![Web Fondamentals](./reveal.js/images/qr-code.svg)
+Il s'agit d'une application web permettant aux étudiants de télécharger leur diplômes d'étudiants à partir de leur matricule.
+
+C'est un projet assez ludique aucours duquel on aura la chance de pratiquer le HTML, le CSS, le JavaScript, le SQL et le PHP.
